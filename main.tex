@@ -247,13 +247,13 @@ Array<int> ZetFunction(String s) {
         \item Находим $pos$ - обратный к $p$.
         \item Иницилизируем $k=0$. Для $i\in \overline{0, n-1}$
         \begin{itemize}
-            \item $pos[i] == 0 \Rightarrow$ continue
+            \item $k=\max (k-1, 0)$
+            \item $pos[i] == n-1 \Rightarrow$ continue
             \item Иначе:
             \begin{itemize}
-                \item $i=p[pos[i]-1]$
+                \item $j=p[pos[i]+1]$
                 \item пока $s[i+k]==s[j+k] \Rightarrow k++$
                 \item $lcp[pos[i]]=k$
-                \item $k>0 \Rightarrow k++$
             \end{itemize}
         \end{itemize}
     \end{enumerate}
